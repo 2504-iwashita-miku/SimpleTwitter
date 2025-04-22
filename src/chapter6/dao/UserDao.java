@@ -198,7 +198,7 @@ public class UserDao {
 	    	        ps.setString(4, user.getPassword());
 	    	        ps.setString(5, user.getDescription());
 	    	        ps.setInt(6, user.getId());
-	    	    } else {
+    	        } else {
     	        	ps.setString(4, user.getDescription());
     	        	ps.setInt(5, user.getId());
     	        }
