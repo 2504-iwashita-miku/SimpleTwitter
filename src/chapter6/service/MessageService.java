@@ -54,7 +54,7 @@ public class MessageService {
             close(connection);
         }
     }
-    public List<UserMessage> select() {
+    public List<UserMessage> select(String userId) {
 
 	  log.info(new Object(){}.getClass().getEnclosingClass().getName() +
         " : " + new Object(){}.getClass().getEnclosingMethod().getName());
@@ -80,4 +80,9 @@ public class MessageService {
             close(connection);
         }
     }
+
+
+
+
+
 }
