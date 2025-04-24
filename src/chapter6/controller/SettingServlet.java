@@ -23,7 +23,7 @@ import chapter6.service.UserService;
 public class SettingServlet extends HttpServlet {
 
 	/**
-	* ロガーインスタンスの生成
+	* ロガーインスタンスの生成4
 	*/
 	Logger log = Logger.getLogger("twitter");
 
@@ -124,8 +124,8 @@ public class SettingServlet extends HttpServlet {
 		} else if (20 < account.length()) {
 			errorMessages.add("アカウント名は20文字以下で入力してください");
 		}
-		new UserService().select(account);
-		if (account != null) {
+		User checkAccount = new UserService().select(account);
+		if (checkAccount != null && checkAccount.getId() != user.getId()) {
 			errorMessages.add("ユーザーが重複しています");
 		}
 		if (!StringUtils.isEmpty(email) && (50 < email.length())) {
