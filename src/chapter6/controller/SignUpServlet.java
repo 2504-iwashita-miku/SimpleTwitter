@@ -105,11 +105,13 @@ public class SignUpServlet extends HttpServlet {
 		} else if (20 < account.length()) {
 			errorMessages.add("アカウント名は20文字以下で入力してください");
 		}
-		//		ここで重複チェックをしたい
+
+		//ここで重複チェックをしたい
 		User checkAccount = new UserService().select(account);
 		if (checkAccount != null) {
 			errorMessages.add("ユーザーが重複しています");
 		}
+
 		if (StringUtils.isEmpty(password)) {
 			errorMessages.add("パスワードを入力してください");
 		}
