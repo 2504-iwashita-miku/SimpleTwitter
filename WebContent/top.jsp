@@ -94,7 +94,7 @@
 						</form>
 						<form action ="edit" mothod="post">
 						<input name="id" value="${message.id}" id="id" type="hidden" />
-						<input type="submit" onclick="http://localhost:8080/SimpleTwitter/edit.jsp='edit'" value="編集">
+						<input type="submit" value="編集">
 						</form>
 					</c:if>
 				</div>

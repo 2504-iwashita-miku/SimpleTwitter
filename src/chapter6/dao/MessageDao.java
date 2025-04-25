@@ -91,5 +91,33 @@ public class MessageDao {
 			close(ps);
 		}
 	}
+	public void update(Connection connection, int messageId ) {
+//
+//		log.info(new Object() {
+//		}.getClass().getEnclosingClass().getName() +
+//				" : " + new Object() {
+//				}.getClass().getEnclosingMethod().getName());
+//
+//		PreparedStatement ps = null;
+//		try {
+//			StringBuilder sql = new StringBuilder();
+//			sql.append("UPDATE messages SET (  ");
+////			sql.append(" text = ? ");
+//			sql.append("WHERE user_id = ? ");
+//
+//			ps = connection.prepareStatement(sql.toString());
+//
+//			ps.setInt(1, messageId);
+////			ps.setString(2, message.getText());
+//
+//			ps.executeUpdate();
+//		} catch (SQLException e) {
+//			log.log(Level.SEVERE, new Object() {
+//			}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
+//			throw new SQLRuntimeException(e);
+//		} finally {
+//			close(ps);
+//		}
+	}
 
 }
