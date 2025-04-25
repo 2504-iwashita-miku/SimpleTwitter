@@ -91,7 +91,7 @@ public class MessageDao {
 			close(ps);
 		}
 	}
-	public void update(Connection connection, int messageId ) {
+	public void update(Connection connection, int messageId) {
 //
 //		log.info(new Object() {
 //		}.getClass().getEnclosingClass().getName() +
@@ -101,16 +101,22 @@ public class MessageDao {
 //		PreparedStatement ps = null;
 //		try {
 //			StringBuilder sql = new StringBuilder();
-//			sql.append("UPDATE messages SET (  ");
-////			sql.append(" text = ? ");
-//			sql.append("WHERE user_id = ? ");
+//			sql.append("UPDATE users SET ");
+//			sql.append("    text = ?, ");
+//			sql.append("    updated_date = CURRENT_TIMESTAMP ");
+//			sql.append("WHERE id = ?");
 //
 //			ps = connection.prepareStatement(sql.toString());
 //
-//			ps.setInt(1, messageId);
-////			ps.setString(2, message.getText());
 //
-//			ps.executeUpdate();
+//			ps.setString(1, messageId.gettext());
+//				ps.setInt(2, messageId);
+//
+//			int count = ps.executeUpdate();
+//			if (count == 0) {
+//				log.log(Level.SEVERE, "更新対象のレコードが存在しません", new NoRowsUpdatedRuntimeException());
+//				throw new NoRowsUpdatedRuntimeException();
+//			}
 //		} catch (SQLException e) {
 //			log.log(Level.SEVERE, new Object() {
 //			}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
@@ -118,6 +124,7 @@ public class MessageDao {
 //		} finally {
 //			close(ps);
 //		}
-	}
+//	}
+}
 
 }

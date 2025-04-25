@@ -92,7 +92,7 @@
 							<input type="submit" value="削除">
 
 						</form>
-						<form action ="edit" mothod="post">
+						<form action ="edit" mothod="get">
 						<input name="id" value="${message.id}" id="id" type="hidden" />
 						<input type="submit" value="編集">
 						</form>
