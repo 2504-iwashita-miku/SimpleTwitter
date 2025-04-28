@@ -90,9 +90,12 @@
 						<form action="deleteMessage" method="post">
 							<input name="id" value="${message.id}" id="id" type="hidden" />
 							<input type="submit" value="削除">
-
 						</form>
-						<form action ="edit" mothod="get">
+					</c:if>
+				</div>
+				<div class="edit">
+				<c:if test="${message.userId == loginUser.id}">
+						<form action ="edit" method="get">
 						<input name="id" value="${message.id}" id="id" type="hidden" />
 						<input type="submit" value="編集">
 						</form>

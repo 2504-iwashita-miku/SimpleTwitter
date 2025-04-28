@@ -49,19 +49,22 @@ public class MessageServlet extends HttpServlet {
 		HttpSession session = request.getSession();
 		List<String> errorMessages = new ArrayList<String>();
 
+		//リクエストから値を取り出す
 		String text = request.getParameter("text");
 		if (!isValid(text, errorMessages)) {
 			session.setAttribute("errorMessages", errorMessages);
 			response.sendRedirect("./");
 			return;
 		}
-
+		//テキストをメッセージという変数に格納している
 		Message message = new Message();
 		message.setText(text);
 
+		//セッションから値を取得する
 		User user = (User) session.getAttribute("loginUser");
 		message.setUserId(user.getId());
 
+		//MessageServiceを呼び出している
 		new MessageService().insert(message);
 		response.sendRedirect("./");
 	}
