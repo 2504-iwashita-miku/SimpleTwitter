@@ -162,8 +162,8 @@ public class MessageDao {
 		PreparedStatement ps = null;
 		try {
 			StringBuilder sql = new StringBuilder();
-			sql.append("UPDATE users SET ");
-			sql.append("    text = ? ");
+			sql.append("UPDATE messages SET ");
+			sql.append("    text = ?, ");
 			sql.append("    updated_date = CURRENT_TIMESTAMP ");
 			sql.append("WHERE id = ? ");
 
@@ -172,8 +172,10 @@ public class MessageDao {
 			ps.setString(1, message.getText());
 			ps.setInt(2, message.getId());
 
-//			int count = ps.executeUpdate();
+			int count = ps.executeUpdate();
+			if(count == 0) {
 			throw new NoRowsUpdatedRuntimeException();
+			}
 		} catch (SQLException e) {
 			log.log(Level.SEVERE, new Object() {
 			}.getClass().getEnclosingClass().getName() + " : " + e.toString(), e);
